@@ -68,12 +68,12 @@ var name_input = {
       </div>`, placeholder: "Yamada Taro", name: 'participant_name', required: true}
     ],
     on_finish: function(data) {
-      // 将姓名保存到全局数据中
+      // save participants' name into global environment
       jsPsych.data.addProperties({
         participant_name: data.response.participant_name
       });
       
-      // 动态更新 pavlovia_finish 的 participantID
+      // update pavlovia_finish's participantID simultaneously
       pavlovia_finish.participantID = data.response.participant_name;
     }
 };
